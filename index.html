@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexander Lebedev – The Data Alchemist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #1a1a1a;
+      --accent: #D4AF37;
+      --muted: #666666;
+      --transition: 0.3s ease;
+    }
+    [data-theme="dark"] {
+      --bg: #0d0d0d;
+      --fg: #eeeeee;
+      --accent: #FFD700;
+      --muted: #999999;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      transition: background-color var(--transition), color var(--transition);
+    }
+    nav { position: fixed; top: 20px; right: 20px; z-index: 100; }
+    .theme-toggle {
+      background: none;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      width: 3rem; height: 3rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .theme-toggle:hover { background: var(--accent); }
+    header {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 80px 20px;
+      background: var(--bg) url('header-bg.png') center/cover no-repeat;
+      text-align: center;
+    }
+    .avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%; border: 4px solid var(--accent);
+      margin-bottom: 20px;
+      object-fit: cover;
+      background-color: var(--bg);
+    }
+    header h1 {
+      font-size: 2.8rem; margin: 0.3em 0;
+    }
+    header p {
+      font-size: 1.1rem; color: var(--muted);
+      margin: 0;
+    }
+    section {
+      max-width: 1000px; margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-size: 2.2rem; margin-bottom: 0.8em;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.3em;
+    }
+    p { margin-bottom: 1em; font-size: 1rem; }
+    ul { list-style: none; padding: 0; margin-bottom: 1em; }
+    ul li {
+      margin-bottom: 0.6em; padding-left: 1.5em; position: relative;
+    }
+    ul li::before {
+      content: '▹'; position: absolute; left: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      top: 0;
+    }
+    .expertise {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 24px;
+    }
+    .expertise-item {
+      background: rgba(212,175,55,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform var(--transition);
+    }
+    .expertise-item:hover { transform: translateY(-4px); }
+    .expertise-item h3 {
+      margin-bottom: 0.6em; color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 32px;
+    }
+    .work-card {
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex; flex-direction: column;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .work-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+    .work-logo { width: 80px; margin-bottom: 12px; }
+    .work-card h4 { margin: 0 0 0.4em; font-size: 1rem; }
+    .work-card p { font-size: 0.9rem; flex-grow: 1; }
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 32px; margin-top: 20px;
+    }
+    .review {
+      background: rgba(212,175,55,0.05);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 10px;
+      display: flex; flex-direction: column;
+      transition: transform var(--transition);
+    }
+    .review:hover { transform: translateY(-4px); }
+    .review p { flex-grow: 1; font-size: 0.9rem; }
+    .review strong {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      align-self: flex-end;
+    }
+    .contact {
+      background: rgba(212,175,55,0.05);
+      padding: 30px; border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .contact form { display: grid; gap: 16px; }
+    .contact input, .contact textarea {
+      padding: 12px;
+      border: 2px solid var(--muted);
+      border-radius: 6px;
+      font-size: 1rem;
+      background: var(--bg);
+      color: var(--fg);
+      transition: border-color var(--transition);
+    }
+    .contact input:focus, .contact textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .contact button {
+      padding: 14px;
+      font-size: 1rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .contact button:hover { background: #c7a63f; transform: translateY(-2px); }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      .expertise, .works, .reviews { gap: 20px; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <nav><button class="theme-toggle" aria-label="Toggle theme">🌓</button></nav>
+  <header>
+    <img src="avatar.png" alt="Alexander Lebedev" class="avatar" />
+    <h1>Alexander Lebedev, MD PhD</h1>
+    <p>The Data Alchemist – Expert AI & Data Solutions for Your Business</p>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>As a seasoned AI scientist and physician, I guide enterprises in embedding cutting-edge AI and data-driven strategies into their core operations. My PhD in AI for biomedical data equips me to tackle complex datasets, delivering predictive insights that power decision-making across healthtech, finance, and beyond.</p>
+  </section>
+
+  <section id="expertise">
+    <h2>Core Expertise</h2>
+    <div class="expertise">
+      <div class="expertise-item">
+        <h3>Machine Learning Architecture</h3>
+        <p>Design and implement scalable ML pipelines using Python, R, and PyTorch/TensorFlow.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Predictive Modeling</h3>
+        <p>Create time-series and regression models for financial forecasts and clinical outcomes.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Natural Language Processing</h3>
+        <p>Develop NLP systems for semantic analysis, sentiment detection, and chatbot interfaces.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Data Engineering & ETL</h3>
+        <p>Build robust data ingestion, cleansing, and warehousing solutions for large-scale operations.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Business Intelligence & Visualization</h3>
+        <p>Craft interactive dashboards and reports to translate insights into strategic decisions.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Research & Statistical Analysis</h3>
+        <p>Execute rigorous quantitative and qualitative research for high-stakes, published studies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <h2>Selected Works</h2>
+    <div class="works">
+      <div class="work-card">
+        <img class="work-logo" src="logos/alpharoc.png" alt="AlphaROC" />
+        <h4>AlphaROC</h4>
+        <p>Developed seasonality analysis of financial transactions; ML-based price forecasts and valuation for futures and stocks; alternative data analytics; automated financial report scraping.</p>
+      </div>
+      <div class="work-card">
+        <img class="work-logo" src="logos/opendialogue.png" alt="Open Dialogue Space" />
+        <h4>Open Dialogue Space</h4>
+        <p>Led strategic communications with academia; BI and predictive modelling for marketing; implemented NLP pipelines and semantic analysis for mental health monitoring.</p>
+      </div>
+      <div class="work-card">
+        <img class="work-logo" src="logos/ohcleo.png" alt="OhCleo AB" />
+        <h4>OhCleo AB</h4>
+        <p>Built LLM-powered chatbots, theme tagging, and speech-to-text workflows for enhanced user engagement.</p>
+      </div>
+      <div class="work-card">
+        <img class="work-logo" src="logos/katharsis.png" alt="Katharsis Journeys Ltd" />
+        <h4>Katharsis Journeys Ltd</h4>
+        <p>Delivered AI/NLP solutions boosting growth by 30% and securing “Best Psilocybin Retreats” placement; financial modeling to drive strategic partnerships.</p>
+      </div>
+      <div class="work-card">
+        <img class="work-logo" src="logos/karolinska.png" alt="Karolinska Institutet" />
+        <h4>Karolinska Institutet</h4>
+        <p>Applied big data analytics to public health policy; machine learning on brain imaging and behavioral time-series data for groundbreaking psychopharmacology research.</p>
+      </div>
+      <div class="work-card">
+        <img class="work-logo" src="logos/stavanger.png" alt="Stavanger Univ. Hospital" />
+        <h4>Stavanger Univ. Hospital</h4>
+        <p>Developed ML tools for clinical data analysis; co-secured NOK 1.5M funding via international collaboration.</p>
+      </div>
+      <div class="work-card">
+        <img class="work-logo" src="logos/dreamseer.png" alt="Dreamseer" />
+        <h4>Dreamseer</h4>
+        <p>Co-founded and led the development of an AI-driven dream-analysis platform combining Jungian depth psychology with advanced NLP and data visualization for collective insights.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>“Alexander is one of the most inspirational and brilliant minds I’ve encountered. A compassionate thinker who improves lives through innovation.”</p>
+        <strong>— Jonathan Dekle</strong>
+      </div>
+      <div class="review">
+        <p>“A brilliant psychiatrist, scientist, and leader. His ability to listen, analyse, and guide with wisdom is rare.”</p>
+        <strong>— Tatiana Santini</strong>
+      </div>
+      <div class="review">
+        <p>“Alexander brings together neuroscience, finance, behavioural economics and data to create inspiring, high-performing environments.”</p>
+        <strong>— Luigi Espasiano, MD</strong>
+      </div>
+      <div class="review">
+        <p>“His expertise in big data analytics and statistical methods has been crucial in multiple high-impact research projects.”</p>
+        <strong>— Christoph Abé, PhD</strong>
+      </div>
+      <div class="review">
+        <p>“He combines deep technical insight with creativity and rapid execution—nothing is impossible.”</p>
+        <strong>— Ivan Dimoski</strong>
+      </div>
+      <div class="review">
+        <p>“A fantastic researcher and developer, warm and empathetic, with outstanding productivity and intelligence.”</p>
+        <strong>— Pierre de Boer</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <form action="https://formspree.io/f/mzbllwoy" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Reach Out</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Alexander Lebedev — The Data Alchemist</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+    });
+  </script>
+</body>
+</html>
