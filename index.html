@@ -229,27 +229,45 @@
     }
 
     /* Testimonials */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
     .review {
-      background: rgba(212,175,55,0.05);
-      border-left: 4px solid var(--accent);
-      padding: 20px;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      transition: transform var(--transition);
+      position: relative;
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform var(--transition), box-shadow var(--transition);
     }
     .review:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+    .review::before {
+      content: "“";
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--accent);
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      opacity: 0.2;
     }
     .review p {
-      flex-grow: 1;
-      font-size: 0.9rem;
+      margin: 1.2em 0 1em;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
     }
     .review strong {
-      margin-top: 12px;
-      font-size: 0.85rem;
-      color: var(--accent);
-      align-self: flex-end;
+      position: relative;
+      z-index: 1;
+      margin-top: 16px;
+      font-size: 0.9rem;
     }
 
     /* Contact */
@@ -312,7 +330,7 @@
     }
   </style>
 </head>
-<body data-theme="light">
+<body data-theme="dark">
   <script>
     // Auto-detect preferred color scheme
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -332,10 +350,10 @@
       Entrepreneur • Data Scientist • Medical Doctor
     </p>
     <p class="hero-statement">
-      Transforming data into healthier minds and stronger portfolios—where AI meets human resilience.
+      Precision for Minds & Markets
     </p>
     <p class="brand-subtitle">
-      Lebedev Labs | AI × Medicine × Finance
+      Lebedev Labs | AI × WellTech × Digital Health × FinTech
       &nbsp;•&nbsp;
       <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">
         <img
@@ -417,7 +435,7 @@
         <img class="work-logo" src="logos/opendialogue.png" alt="Open Dialogue Space"/>
         <h4>Open Dialogue Space</h4>
         <p>
-          Science Director: leading R&D of the digital mental health platform, launched interactive data-informed dashboards for mental health monitoring, semantic pipelines for crisis detection.
+          Science Director. Leading R&D of the digital mental health platform, launched interactive data-informed dashboards for mental health monitoring, semantic pipelines for crisis detection.
         </p>
       </div>
 
@@ -447,7 +465,7 @@
         <img class="work-logo" src="logos/katharsis.png" alt="Katharsis Journeys Ltd"/>
         <h4>Katharsis Journeys Ltd</h4>
         <p>
-          Strategic wellness partnerships with academia, NLP solutions driving 30% revenue growth, recognized as "Best Psilocybin Retreats in Europe" by Healing Maps.
+          Co-founder. Strategic wellness partnerships with academia, NLP solutions driving 30% revenue growth, recognized as "Best Psilocybin Retreats in Europe" by Healing Maps.
         </p>
       </div>
 
@@ -455,7 +473,8 @@
         <img class="work-logo" src="logos/karolinska.png" alt="Karolinska Institutet"/>
         <h4>Karolinska Institutet</h4>
         <p>
-          Utilized big-data analytics to shape public health policy and spearheaded multiple large-scale mental health and well-being initiatives, including two clinical trials.        </p>
+          Leveraged big-data analytics to inform public health policies on susbtance use and global societal dynamics. Spearheaded large-scale mental health and well-being initiatives. Led a clinical trial investigating psilocybin-based treatment for depression.
+        </p>
       </div>
 
       <div class="work-card">
@@ -463,6 +482,14 @@
         <h4>Stavanger University Hospital</h4>
         <p>
           Developed ML tools for clinical data analysis and secured NOK 1.5M in research funding, established international collaborations.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="logos/arc.png" alt="Aging Research Center"/>
+        <h4>Aging Research Center</h4>
+        <p>
+          Coordinated the €1M project funded by the European Research Council, investigating cognitive and neurobiological plasticity. Oversaw the full lifecycle of a clinical trial—from protocol development and coordination to data analysis and final reporting.
         </p>
       </div>
 
@@ -504,32 +531,32 @@
     <div class="reviews">
 
       <div class="review">
-        <p>“Alexander is one of the most inspirational and brilliant minds I’ve encountered. A compassionate thinker who improves lives through innovation.”</p>
+        <p>Alexander is one of the most inspirational and brilliant minds I’ve encountered. A compassionate thinker who improves lives through innovation.</p>
         <strong>— Jonathan Dekle</strong>
       </div>
 
       <div class="review">
-        <p>“A brilliant psychiatrist, scientist, and leader. His ability to listen, analyse, and guide with wisdom is rare.”</p>
+        <p>A brilliant psychiatrist, scientist, and leader. His ability to listen, analyse, and guide with wisdom is rare.</p>
         <strong>— Tatiana Santini</strong>
       </div>
 
       <div class="review">
-        <p>“Alexander brings together neuroscience, finance, behavioural economics and data to create inspiring, high-performing environments.”</p>
+        <p>Alexander brings together neuroscience, finance, behavioural economics and data to create inspiring, high-performing environments.</p>
         <strong>— Luigi Espasiano, MD</strong>
       </div>
 
       <div class="review">
-        <p>“His expertise in big data analytics and statistical methods has been crucial in multiple high-impact research projects.”</p>
+        <p>His expertise in big data analytics and statistical methods has been crucial in multiple high-impact research projects.</p>
         <strong>— Christoph Abé, PhD</strong>
       </div>
 
       <div class="review">
-        <p>“He combines deep technical insight with creativity and rapid execution — nothing is impossible.”</p>
+        <p>He combines deep technical insight with creativity and rapid execution — nothing is impossible.</p>
         <strong>— Ivan Dimoski</strong>
       </div>
 
       <div class="review">
-        <p>“A fantastic researcher and developer, warm and empathetic, with outstanding productivity and intelligence.”</p>
+        <p>A fantastic researcher and developer, warm and empathetic, with outstanding productivity and intelligence.</p>
         <strong>— Pierre de Boer</strong>
       </div>
 
