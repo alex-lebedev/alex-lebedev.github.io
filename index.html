@@ -334,8 +334,21 @@
     <p class="hero-statement">
       Transforming data into healthier minds and stronger portfolios—where AI meets human resilience.
     </p>
-    <p class="brand-subtitle">Lebedev Labs | AI × Medicine × Finance</p>
+    <p class="brand-subtitle">
+      Lebedev Labs | AI × Medicine × Finance
+      &nbsp;•&nbsp;
+      <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">
+        <img
+          id="github-icon"
+          src="icons/github_black.png"
+          alt="GitHub"
+          width="20"
+          style="vertical-align:middle"
+        /> GitHub
+      </a>
+    </p>
   </header>
+
 
   <section id="about">
     <h2>About</h2>
@@ -463,21 +476,21 @@
       <figure class="visualization">
         <img
           src="images/market-MLanalysis.png"
-          alt="Lebedev Labs • BTC On-Chain Insights – price vs unspent miner supply with daily Δ and 7-day SMA"
+          alt="BTC On-Chain Insights – price vs unspent miner supply with daily Δ."
         />
         <figcaption>
-          <strong>Lebedev Labs • BTC On-Chain Insights</strong><br/>
-          Price &amp; unspent miner supply on top; daily Δ supply + 7-day SMA below.
+          <strong>BTC On-Chain Insights</strong><br/>
+          BTC price vs. unspent miner supply change.
         </figcaption>
       </figure>
-      <!-- Neuro-imaging ML Pipeline -->
+      <!-- Brain imaging ML Pipeline -->
       <figure class="visualization">
         <img
           src="images/brain-MLanalysis.png"
           alt="Workflow pipeline from Lebedev et al. (2014) – FreeSurfer &amp; R analysis"
         />
         <figcaption>
-          <strong>ML-Driven Neuro-Imaging Pipeline</strong><br/>
+          <strong>Diagnostic Classification for Medical Data</strong><br/>
           From <a href="https://pubmed.ncbi.nlm.nih.gov/25379423/" target="_blank" rel="noopener">
             Lebedev et al. (2014)
           </a>: Medical image data processing → high-dimensional feature extraction → ML classification &amp; visualization.
@@ -526,7 +539,7 @@
   <section id="vision">
     <h2>Vision &amp; Mission</h2>
     <p>
-      Envisions a convergence of data science and medicine to build resilient health systems
+      Envisions a convergence of data science and well-being to build resilient health systems
       and smart financial solutions. Committed to sustainable impact through rigorous research,
       strategic innovation, and real-world results.
     </p>
@@ -544,20 +557,32 @@
   </section>
 
   <footer>
-    <p>© 2025 Lebedev Labs — <a href="https://www.linkedin.com/in/alexandervlebedev/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p>
+      © 2025 Lebedev Labs — 
+      <a href="https://www.linkedin.com/in/alexandervlebedev/" target="_blank" rel="noopener">LinkedIn</a>
+      • 
+      <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">GitHub</a>
+    </p>
   </footer>
 
+
   <script>
+
+
     const toggle = document.querySelector('.theme-toggle');
-    const body = document.body;
-    const logo = document.getElementById('site-logo');
+    const body   = document.body;
+    const logo   = document.getElementById('site-logo');
+    const ghIcon = document.getElementById('github-icon');
+
     function updateLogo() {
-      logo.src = body.dataset.theme === 'dark'
-        ? 'ouroboros_white.png'
-        : 'ouroboros_black.png';
+      const isDark = body.dataset.theme === 'dark';
+      logo.src   = isDark ? 'ouroboros_white.png'     : 'ouroboros_black.png';
+      ghIcon.src = isDark ? 'icons/github_white.png'  : 'icons/github_black.png';
     }
-    // initialize
+
+    // initialize on page load
     updateLogo();
+
     toggle.addEventListener('click', () => {
       body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
       updateLogo();
