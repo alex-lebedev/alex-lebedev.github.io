@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexander Lebedev – The Data Alchemist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Dr. Alexander Lebedev, MD PhD – an AI scientist and physician integrating advanced analytics in healthcare and finance."/>
+  <title>Lebedev Labs — Alexander Lebedev, MD PhD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
   <style>
+    /* Color tokens */
     :root {
       --bg: #fafafa;
       --fg: #1a1a1a;
@@ -19,71 +21,149 @@
       --accent: #FFD700;
       --muted: #999999;
     }
-    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--fg);
       font-family: 'Inter', sans-serif;
       line-height: 1.5;
-      transition: background-color var(--transition), color var(--transition);
+      transition: background var(--transition), color var(--transition);
     }
-    nav { position: fixed; top: 20px; right: 20px; z-index: 100; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Theme toggle and logo in nav */
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      left: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .nav-logo {
+      width: 60px;
+      height: auto;
+    }
     .theme-toggle {
-      background: none;
+      width: 3rem;
+      height: 3rem;
       border: 2px solid var(--accent);
       border-radius: 50%;
-      width: 3rem; height: 3rem;
-      display: flex; align-items: center; justify-content: center;
+      background: none;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: background var(--transition), border-color var(--transition);
     }
-    .theme-toggle:hover { background: var(--accent); }
+    .theme-toggle:hover {
+      background: var(--accent);
+    }
+
+    /* Header */
     header {
-      display: flex; flex-direction: column; align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 80px 20px;
       background: var(--bg) url('header-bg.png') center/cover no-repeat;
       text-align: center;
     }
     .avatar {
-      width: 140px; height: 140px;
-      border-radius: 50%; border: 4px solid var(--accent);
-      margin-bottom: 20px;
+      width: 140px;
+      height: 140px;
+      border: 4px solid var(--accent);
+      border-radius: 50%;
       object-fit: cover;
-      background-color: var(--bg);
+      background: var(--bg);
+      margin-bottom: 20px;
     }
     header h1 {
-      font-size: 2.8rem; margin: 0.3em 0;
+      font-size: 2.8rem;
+      margin: 0.2em 0;
+      font-weight: 700;
     }
-    header p {
-      font-size: 1.1rem; color: var(--muted);
-      margin: 0;
+    .roles {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0.2em 0;
+      max-width: 600px;
     }
+    .hero-statement {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 700px;
+      margin: 0.6em 0;
+      line-height: 1.4;
+    }
+    .brand-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.4em;
+      letter-spacing: 0.05em;
+    }
+
+    /* Sections */
     section {
-      max-width: 1000px; margin: 60px auto;
+      max-width: 1000px;
+      margin: 60px auto;
       padding: 0 20px;
     }
     h2 {
-      font-size: 2.2rem; margin-bottom: 0.8em;
+      font-size: 2.2rem;
+      margin-bottom: 0.6em;
       border-bottom: 3px solid var(--accent);
-      padding-bottom: 0.3em;
+      padding-bottom: 0.2em;
     }
-    p { margin-bottom: 1em; font-size: 1rem; }
-    ul { list-style: none; padding: 0; margin-bottom: 1em; }
+    p {
+      margin-bottom: 1em;
+      font-size: 1rem;
+    }
+    ul {
+      margin-bottom: 1em;
+      padding: 0;
+      list-style: none;
+    }
     ul li {
-      margin-bottom: 0.6em; padding-left: 1.5em; position: relative;
+      position: relative;
+      padding-left: 1.4em;
+      margin-bottom: 0.6em;
     }
     ul li::before {
-      content: '▹'; position: absolute; left: 0;
+      content: '▹';
+      position: absolute;
+      left: 0;
       color: var(--accent);
       font-size: 1.2rem;
       top: 0;
     }
-    .expertise {
+
+    /* Grid utilities */
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
       gap: 24px;
     }
+    .auto-fit-280 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .auto-fit-260 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    /* Expertise cards */
     .expertise-item {
       background: rgba(212,175,55,0.1);
       padding: 20px;
@@ -91,59 +171,100 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform var(--transition);
     }
-    .expertise-item:hover { transform: translateY(-4px); }
+    .expertise-item:hover {
+      transform: translateY(-4px);
+    }
     .expertise-item h3 {
-      margin-bottom: 0.6em; color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 0.6em;
+      color: var(--accent);
       font-size: 1.1rem;
     }
-    .works {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap: 32px;
-    }
+
+    /* Work cards */
     .work-card {
       background: var(--bg);
       border: 2px solid var(--accent);
       border-radius: 10px;
       padding: 20px;
-      display: flex; flex-direction: column;
-      transition: box-shadow var(--transition), transform var(--transition);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
     }
     .work-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 24px rgba(0,0,0,0.15);
     }
-    .work-logo { width: 80px; margin-bottom: 12px; }
-    .work-card h4 { margin: 0 0 0.4em; font-size: 1rem; }
-    .work-card p { font-size: 0.9rem; flex-grow: 1; }
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap: 32px; margin-top: 20px;
+    .work-logo {
+      width: 80px;
+      margin-bottom: 12px;
     }
+    .work-card h4 {
+      margin: 0 0 0.4em;
+      font-size: 1rem;
+    }
+    .work-card p {
+      flex-grow: 1;
+      font-size: 0.9rem;
+    }
+
+    /* Visualizations */
+    .visualization {
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .visualization img {
+      max-width: 100%;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .visualization p {
+      margin-top: 0.5em;
+      font-size: 0.9rem;
+    }
+    .visualization:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    /* Testimonials */
     .review {
       background: rgba(212,175,55,0.05);
       border-left: 4px solid var(--accent);
       padding: 20px;
       border-radius: 10px;
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
       transition: transform var(--transition);
     }
-    .review:hover { transform: translateY(-4px); }
-    .review p { flex-grow: 1; font-size: 0.9rem; }
+    .review:hover {
+      transform: translateY(-4px);
+    }
+    .review p {
+      flex-grow: 1;
+      font-size: 0.9rem;
+    }
     .review strong {
       margin-top: 12px;
       font-size: 0.85rem;
       color: var(--accent);
       align-self: flex-end;
     }
+
+    /* Contact */
     .contact {
       background: rgba(212,175,55,0.05);
-      padding: 30px; border-radius: 10px;
+      padding: 30px;
+      border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .contact form { display: grid; gap: 16px; }
-    .contact input, .contact textarea {
+    .contact form {
+      display: grid;
+      gap: 16px;
+    }
+    .contact input,
+    .contact textarea {
       padding: 12px;
       border: 2px solid var(--muted);
       border-radius: 6px;
@@ -152,9 +273,10 @@
       color: var(--fg);
       transition: border-color var(--transition);
     }
-    .contact input:focus, .contact textarea:focus {
-      outline: none;
+    .contact input:focus,
+    .contact textarea:focus {
       border-color: var(--accent);
+      outline: none;
     }
     .contact button {
       padding: 14px;
@@ -166,152 +288,279 @@
       cursor: pointer;
       transition: background var(--transition), transform var(--transition);
     }
-    .contact button:hover { background: #c7a63f; transform: translateY(-2px); }
+    .contact button:hover {
+      background: #c7a63f;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 40px 20px;
       color: var(--muted);
       font-size: 0.85rem;
     }
+
+    /* Responsive tweaks */
     @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      h2 { font-size: 1.6rem; }
-      .expertise, .works, .reviews { gap: 20px; }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body data-theme="light">
-  <nav><button class="theme-toggle" aria-label="Toggle theme">🌓</button></nav>
+  <script>
+    // Auto-detect preferred color scheme
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <nav>
+    <img id="site-logo" class="nav-logo" src="ouroboros_black.png" alt="Lebedev Labs logo"/>
+    <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+  </nav>
+
   <header>
-    <img src="avatar.png" alt="Alexander Lebedev" class="avatar" />
+    <img src="avatar.png" alt="Alexander Lebedev" class="avatar"/>
     <h1>Alexander Lebedev, MD PhD</h1>
-    <p>The Data Alchemist – Expert AI & Data Solutions for Your Business</p>
+    <p class="roles">
+      Entrepreneur • Data Scientist • Medical Doctor
+    </p>
+    <p class="hero-statement">
+      Transforming data into healthier minds and stronger portfolios—where AI meets human resilience.
+    </p>
+    <p class="brand-subtitle">Lebedev Labs | AI × Medicine × Finance</p>
   </header>
 
   <section id="about">
     <h2>About</h2>
-    <p>As a seasoned AI scientist and physician, I guide enterprises in embedding cutting-edge AI and data-driven strategies into their core operations. My PhD in AI for biomedical data equips me to tackle complex datasets, delivering predictive insights that power decision-making across healthtech, finance, and beyond.</p>
+    <p>Dr. Alexander Lebedev is an MD/PhD professional uniquely positioned at the intersection of medicine, advanced artificial intelligence, and finance. His interdisciplinary background is perfectly suited to address contemporary challenges in healthtech, fintech, and data-driven decision-making.</p>
+    <p>With over 16 years of experience in advanced analytics, predictive modeling, and clinical research, Dr. Lebedev has a proven track record of leading complex, high-impact projects across healthcare, technology, and finance. He excels at translating cutting-edge research into real-world solutions – from AI-driven health platforms to algorithmic trading models – consistently delivering innovative outcomes.</p>
+    <p>Dr. Lebedev is also uniquely adept at synthesizing complex, interdisciplinary data into actionable strategic insights. He has spearheaded international research collaborations, demonstrated visionary leadership in innovative projects, and contributed to impactful studies in neuroscience and data science.</p>
   </section>
+
+<section id="highlights">
+  <h2>Highlights</h2>
+  <ul>
+    <li><strong>MD, Psychiatry Specialist</strong> – Pavlov State Medical University (2011); 5+ years clinical practice</li>
+    <li><strong>PhD, Applied AI for Biomedical Data</strong> – University of Bergen (2014); senior positions in Europe's top research centers (Karolinska Institutet, Aging Research Center); published 100+ peer-reviewed articles</li>
+    <li><strong>Co-founder, Dreamseer</strong> (2023–present) – launched AI-driven wellness app; backed by Google Founders Fund</li>
+    <li><strong>Co-founder, Katharsis Journeys Ltd</strong> (2022–2023) – awarded “Best Psilocybin Retreats in Europe”</li>
+    <li><strong>Kaggle MLSP Schizophrenia Challenge</strong> – Award Winner, MLSP 2014; achieved 92% classification accuracy</li>
+    <li><strong>$1 M+ secured</strong> in research grants (Helse Vest, MedIm, Google Founders Fund)</li>
+    <li><strong>Operational Impact</strong> – streamlined analytics pipelines across healthcare, finance, and wellness, driving consistent team efficiency gains of 30 %+</li>
+    <li><strong>Sector Collaborations</strong> – partnerships with EMCDDA, EPA &amp; IIASA on drug policy, mental-health &amp; socio-economic studies</li>
+  </ul>
+</section>
 
   <section id="expertise">
     <h2>Core Expertise</h2>
-    <div class="expertise">
+    <div class="grid auto-fit-280">
       <div class="expertise-item">
-        <h3>Machine Learning Architecture</h3>
-        <p>Design and implement scalable ML pipelines using Python, R, and PyTorch/TensorFlow.</p>
+        <h3>Machine Learning & AI Solutions</h3>
+        <p>Design and implement scalable ML architectures for complex predictive tasks, leveraging frameworks like PyTorch and TensorFlow.</p>
       </div>
       <div class="expertise-item">
         <h3>Predictive Modeling</h3>
-        <p>Create time-series and regression models for financial forecasts and clinical outcomes.</p>
+        <p>Develop time-series forecasts and regression models to anticipate financial market trends and clinical outcomes with precision.</p>
       </div>
       <div class="expertise-item">
         <h3>Natural Language Processing</h3>
-        <p>Develop NLP systems for semantic analysis, sentiment detection, and chatbot interfaces.</p>
+        <p>Build advanced NLP systems for semantic analysis, sentiment detection, and intelligent chatbot interfaces in diverse domains.</p>
       </div>
       <div class="expertise-item">
-        <h3>Data Engineering & ETL</h3>
-        <p>Build robust data ingestion, cleansing, and warehousing solutions for large-scale operations.</p>
+        <h3>Data Engineering & Cloud</h3>
+        <p>Construct robust data ingestion, cleansing, and warehousing pipelines for large-scale operations on modern cloud platforms (AWS/GCP).</p>
       </div>
       <div class="expertise-item">
-        <h3>Business Intelligence & Visualization</h3>
-        <p>Craft interactive dashboards and reports to translate insights into strategic decisions.</p>
+        <h3>Business Intelligence</h3>
+        <p>Craft interactive dashboards and visualizations that translate complex analytics into clear, strategic insights for decision-makers.</p>
       </div>
       <div class="expertise-item">
-        <h3>Research & Statistical Analysis</h3>
-        <p>Execute rigorous quantitative and qualitative research for high-stakes, published studies.</p>
+        <h3>Research & Clinical Insights</h3>
+        <p>Conduct rigorous statistical analysis on clinical trials and real-world biomedical data, producing evidence-based insights for high-impact studies.</p>
       </div>
     </div>
   </section>
 
   <section id="works">
     <h2>Selected Works</h2>
-    <div class="works">
+    <div class="grid auto-fit-260">
+
       <div class="work-card">
-        <img class="work-logo" src="logos/alpharoc.png" alt="AlphaROC" />
+        <img class="work-logo" src="logos/alpharoc.png" alt="AlphaROC"/>
         <h4>AlphaROC</h4>
-        <p>Developed seasonality analysis of financial transactions; ML-based price forecasts and valuation for futures and stocks; alternative data analytics; automated financial report scraping.</p>
+        <p>
+          Developed seasonality analysis of financial transactions; created ML-based price forecasts and valuations for futures and stocks; performed alternative data analytics and automated financial report scraping.
+        </p>
       </div>
+
       <div class="work-card">
-        <img class="work-logo" src="logos/opendialogue.png" alt="Open Dialogue Space" />
+        <img class="work-logo" src="logos/opendialogue.png" alt="Open Dialogue Space"/>
         <h4>Open Dialogue Space</h4>
-        <p>Led strategic communications with academia; BI and predictive modelling for marketing; implemented NLP pipelines and semantic analysis for mental health monitoring.</p>
+        <p>
+          Science Director: leading R&D of the digital mental health platform, launched interactive data-informed dashboards for mental health monitoring, semantic pipelines for crisis detection.
+        </p>
       </div>
+
       <div class="work-card">
-        <img class="work-logo" src="logos/ohcleo.png" alt="OhCleo AB" />
+        <img class="work-logo" src="logos/dreamseer.png" alt="Dreamseer AB"/>
+        <h4>Dreamseer AB</h4>
+        <p> Co-founder. Leveraged cutting-edge NLP and AI to develop an innovative dream analysis platform, advancing mental health insights through technology.</p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="logos/safehaven.png" alt="Safehaven Hedge Fund"/>
+        <h4>Safehaven Hedge Fund</h4>
+        <p>
+          On-chain analytics, macro-market analysis, quantitative trading and hedging strategies, communications with clients.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="logos/ohcleo.png" alt="OhCleo AB"/>
         <h4>OhCleo AB</h4>
-        <p>Built LLM-powered chatbots, theme tagging, and speech-to-text workflows for enhanced user engagement.</p>
+        <p>
+          Built LLM-powered chatbots, thematic content tagging, and speech-to-text workflows to enhance user engagement and platform personalization.
+        </p>
       </div>
+
       <div class="work-card">
-        <img class="work-logo" src="logos/katharsis.png" alt="Katharsis Journeys Ltd" />
+        <img class="work-logo" src="logos/katharsis.png" alt="Katharsis Journeys Ltd"/>
         <h4>Katharsis Journeys Ltd</h4>
-        <p>Delivered AI/NLP solutions boosting growth by 30% and securing “Best Psilocybin Retreats” placement; financial modeling to drive strategic partnerships.</p>
+        <p>
+          Strategic wellness partnerships with academia, NLP solutions driving 30% revenue growth, recognized as "Best Psilocybin Retreats in Europe" by Healing Maps.
+        </p>
       </div>
+
       <div class="work-card">
-        <img class="work-logo" src="logos/karolinska.png" alt="Karolinska Institutet" />
+        <img class="work-logo" src="logos/karolinska.png" alt="Karolinska Institutet"/>
         <h4>Karolinska Institutet</h4>
-        <p>Applied big data analytics to public health policy; machine learning on brain imaging and behavioral time-series data for groundbreaking psychopharmacology research.</p>
+        <p>
+          Utilized big-data analytics to shape public health policy and spearheaded multiple large-scale mental health and well-being initiatives, including two clinical trials.        </p>
       </div>
+
       <div class="work-card">
-        <img class="work-logo" src="logos/stavanger.png" alt="Stavanger Univ. Hospital" />
-        <h4>Stavanger Univ. Hospital</h4>
-        <p>Developed ML tools for clinical data analysis; co-secured NOK 1.5M funding via international collaboration.</p>
+        <img class="work-logo" src="logos/stavanger.png" alt="Stavanger University Hospital"/>
+        <h4>Stavanger University Hospital</h4>
+        <p>
+          Developed ML tools for clinical data analysis and secured NOK 1.5M in research funding, established international collaborations.
+        </p>
       </div>
-      <div class="work-card">
-        <img class="work-logo" src="logos/dreamseer.png" alt="Dreamseer" />
-        <h4>Dreamseer</h4>
-        <p>Co-founded and led the development of an AI-driven dream-analysis platform combining Jungian depth psychology with advanced NLP and data visualization for collective insights.</p>
-      </div>
+
+    </div>
+  </section>
+
+  <section id="analytics-showcase">
+    <h2>Data Insights &amp; Visualizations</h2>
+    <div class="grid auto-fit-280">
+      <!-- On-Chain BTC Analysis -->
+      <figure class="visualization">
+        <img
+          src="images/market-MLanalysis.png"
+          alt="Lebedev Labs • BTC On-Chain Insights – price vs unspent miner supply with daily Δ and 7-day SMA"
+        />
+        <figcaption>
+          <strong>Lebedev Labs • BTC On-Chain Insights</strong><br/>
+          Price &amp; unspent miner supply on top; daily Δ supply + 7-day SMA below.
+        </figcaption>
+      </figure>
+      <!-- Neuro-imaging ML Pipeline -->
+      <figure class="visualization">
+        <img
+          src="images/brain-MLanalysis.png"
+          alt="Workflow pipeline from Lebedev et al. (2014) – FreeSurfer &amp; R analysis"
+        />
+        <figcaption>
+          <strong>ML-Driven Neuro-Imaging Pipeline</strong><br/>
+          From <a href="https://pubmed.ncbi.nlm.nih.gov/25379423/" target="_blank" rel="noopener">
+            Lebedev et al. (2014)
+          </a>: Medical image data processing → high-dimensional feature extraction → ML classification &amp; visualization.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="testimonials">
     <h2>Testimonials</h2>
     <div class="reviews">
+
       <div class="review">
         <p>“Alexander is one of the most inspirational and brilliant minds I’ve encountered. A compassionate thinker who improves lives through innovation.”</p>
         <strong>— Jonathan Dekle</strong>
       </div>
+
       <div class="review">
         <p>“A brilliant psychiatrist, scientist, and leader. His ability to listen, analyse, and guide with wisdom is rare.”</p>
         <strong>— Tatiana Santini</strong>
       </div>
+
       <div class="review">
         <p>“Alexander brings together neuroscience, finance, behavioural economics and data to create inspiring, high-performing environments.”</p>
         <strong>— Luigi Espasiano, MD</strong>
       </div>
+
       <div class="review">
         <p>“His expertise in big data analytics and statistical methods has been crucial in multiple high-impact research projects.”</p>
         <strong>— Christoph Abé, PhD</strong>
       </div>
+
       <div class="review">
-        <p>“He combines deep technical insight with creativity and rapid execution—nothing is impossible.”</p>
+        <p>“He combines deep technical insight with creativity and rapid execution — nothing is impossible.”</p>
         <strong>— Ivan Dimoski</strong>
       </div>
+
       <div class="review">
         <p>“A fantastic researcher and developer, warm and empathetic, with outstanding productivity and intelligence.”</p>
         <strong>— Pierre de Boer</strong>
       </div>
+
     </div>
   </section>
 
+  <section id="vision">
+    <h2>Vision &amp; Mission</h2>
+    <p>
+      Envisions a convergence of data science and medicine to build resilient health systems
+      and smart financial solutions. Committed to sustainable impact through rigorous research,
+      strategic innovation, and real-world results.
+    </p>
+  </section>
+
   <section id="contact" class="contact">
-    <h2>Get in Touch</h2>
+    <h2>Contact</h2>
+    <p>For executive consulting, board advisory, or R&amp;D partnerships, reach out below.</p>
     <form action="https://formspree.io/f/mzbllwoy" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Reach Out</button>
+      <input type="text" name="name" placeholder="Name" required/>
+      <input type="email" name="email" placeholder="Email" required/>
+      <textarea name="message" rows="5" placeholder="Message" required></textarea>
+      <button type="submit">Submit</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Alexander Lebedev — The Data Alchemist</p>
+    <p>© 2025 Lebedev Labs — <a href="https://www.linkedin.com/in/alexandervlebedev/" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
   <script>
     const toggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const logo = document.getElementById('site-logo');
+    function updateLogo() {
+      logo.src = body.dataset.theme === 'dark'
+        ? 'ouroboros_white.png'
+        : 'ouroboros_black.png';
+    }
+    // initialize
+    updateLogo();
     toggle.addEventListener('click', () => {
-      document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+      body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+      updateLogo();
     });
   </script>
 </body>
