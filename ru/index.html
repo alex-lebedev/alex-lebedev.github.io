@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- 0. Preconnect for faster font & CDN loading -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://lebedevlabs.com" crossorigin/>
+
+  <!-- 1. Core SEO -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Д-р Александр Лебедев, MD PhD – an AI scientist and physician integrating advanced analytics in healthcare and finance."/>
   <title>Lebedev Labs — Александр Лебедев, MD PhD</title>
+  <meta name="description" content="Д-р Александр Лебедев, MD PhD – эксперт в области интеграции ИИ в сферах здоровья и финансов."/>
+
+  <!-- 2. Canonical & Alternate languages -->
+  <link rel="canonical" href="https://lebedevlabs.com/ru/"/>
+  <link rel="alternate" hreflang="ru" href="https://lebedevlabs.com/ru/"/>
+  <link rel="alternate" hreflang="en" href="https://lebedevlabs.com/"/>
+
+  <!-- 3. Favicon & Touch Icon -->
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+  <!-- 4. Open Graph -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:title"       content="Lebedev Labs — Александр Лебедев, MD PhD"/>
+  <meta property="og:description" content="Эксперт в области ИИ, врач, интегрирующий аналитику в сферах здоровья и финансов."/>
+  <meta property="og:url"         content="https://lebedevlabs.com/ru/"/>
+  <meta property="og:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs-ru.jpg"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt"    content="Александр Лебедев, MD PhD — учёный-исследователь × врач"/>
+
+  <!-- 5. Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="Lebedev Labs — Александр Лебедев, MD PhD"/>
+  <meta name="twitter:description" content="Эксперт в области ИИ, врач, интегрирующий аналитику в сферах здоровья и финансов."/>
+  <meta name="twitter:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs-ru.jpg"/>
+  <meta name="twitter:image:alt"   content="Александр Лебедев, MD PhD — учёный-исследователь × врач"/>
+
+  <!-- 6. Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Александр Лебедев",
+    "jobTitle":"MD PhD, научный сотрудник в области ИИ и врач",
+    "url":"https://lebedevlabs.com/ru/",
+    "sameAs":[
+      "https://github.com/alex-lebedev",
+      "https://www.linkedin.com/in/alexandervlebedev"
+    ],
+    "image":"https://lebedevlabs.com/avatar.png",
+    "description":"Учëный-исследователь по ИИ и врач, интегрирующий передовую аналитику в здравоохранении и финансах."
+  }
+  </script>
+
+  <!-- 7. Styles & Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
   <style>
     /* Color tokens */
@@ -348,22 +398,6 @@
   </style>
 </head>
 <body data-theme="dark">
-  <script>
-    // Redirect Russian-speaking browsers to /ru/
-    if (location.pathname === "/") {
-      const userLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-      if (userLang.startsWith("ru")) {
-        window.location.replace("/ru/");
-      }
-    }
-  </script>
-
-  <script>
-    // Auto-detect preferred color scheme
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.setAttribute('data-theme', 'dark');
-    }
-  </script>
 
   <nav>
     <div class="nav-left">
@@ -376,8 +410,6 @@
     </div>
   </nav>
 
-
-
   <header>
     <img src="../avatar.png" alt="Александр Лебедев" class="avatar"/>
     <h1>Александр Лебедев, MD PhD</h1>
@@ -385,11 +417,11 @@
       Предприниматель • Data Scientist • Врач
     </p>
     <p class="hero-statement">
-      Безупречная точность для ваших идей и финансовых решений
+      Безупречная точность для ваших идей и финансовых стратегий
     </p>
     <p class="brand-subtitle">
-      Lebedev Labs | ИИ × WellTech × Цифровое Здоровье × Финтех • 
-      &nbsp;•&nbsp;
+      Lebedev Labs | ИИ × WellTech × Digital Health × Fintech |
+      &nbsp;&nbsp;
       <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">
         <img
           id="github-icon"
@@ -405,7 +437,7 @@
 
   <section id="about">
     <h2>О специалисте</h2>
-    <p>Специалист в области прикладного ИИ и науки о данных, врач и доктор наук Александр Лебедев сочетает клинический опыт и глубокие познания в области искусственного интеллекта и финансов. Его междисциплинарный опыт позволяет эффективно решать ключевые задачи в цифровом здравоохранении, финтехе и алгоритмах принятии решений на основе данных.</p>
+    <p>Специалист в области прикладного ИИ и науки о данных, врач и доктор наук Александр Лебедев сочетает клинический опыт и глубокие познания в области искусственного интеллекта и финансов. Его междисциплинарный опыт позволяет эффективно решать ключевые задачи в цифровом здравоохранении, финтехе и алгоритмах принятия решений на основе данных.</p>
     <p>Имея за плечами более 16 лет в продвинутой аналитике, прогностическом моделировании и клинических исследованиях, Александр доказал свою экспертность, руководя сложными и масштабными проектами в здравоохранении, IT и финансовом секторе. Он виртуозно трансформирует научные разработки в практические решения — от ИИ-платформ для мониторинга психического здоровья до алгоритмических торговых моделей — неизменно достигая впечатляющих результатов.</p>
     <p>Особую ценность представляет его способность интегрировать разнородные данные и формировать из них чёткие стратегические рекомендации. Александр инициирует и возглавляет международные исследовательские и бизнес-партнёрства, демонстрируя дальновидное лидерство и внося значительный вклад в развитие передовых ИИ-решений.</p>
   </section>
@@ -415,12 +447,12 @@
   <ul>
     <li><strong>Врач-психиатр — Павловский государственный медицинский университет (2011); более 5 лет клинической практики</li>
     <li><strong>Доктор наук (PhD) по прикладному ИИ в биомедицинских данных — Бергенский университет (2014); старшие должности в ведущих европейских исследовательских центрах (Каролинский Институт, Центр исследований старения); автор более 100 рецензируемых публикаций</li>
-    <li><strong>Сооснователь Dreamseer (2023–н. в.) — приложение по анализу сновидений с использованием ИИ и семантического картирования при поддержке Google Founders Fund/li>
+    <li><strong>Сооснователь Dreamseer (2023–н. в.) — приложение по анализу сновидений с использованием ИИ и семантического картирования при поддержке Google Founders Fund</li>
     <li><strong>Сооснователь Katharsis Journeys Ltd (2022–2023) — признано «Лучшие псилоцибиновые ретриты в Европе» (Healing Maps)</li>
     <li><strong>Победитель Kaggle MLSP Schizophrenia Challenge (2014) с точностью классификации 92%</li>
     <li><strong>Привлечено грантов на сумму более $1 млн (Helse Vest, MedIm, MedMiz, MoodNet, Google Founders Fund)</li>
     <li><strong>Операционная эффективность — оптимизация аналитических процессов в здравоохранении, финансах и wellness, обеспечившая рост эффективности команд более чем на 30%</li>
-    <li><strong>Отраслевая кооперация — партнёрства с EMCDDA, EPA и IIASA в сферах наркополитики, психического здоровья и социально-экономических процессов/li>
+    <li><strong>Отраслевая кооперация — партнёрства с EMCDDA, EPA и IIASA в сферах наркополитики, психического здоровья и социально-экономических процессов</li>
   </ul>
 </section>
 
@@ -626,28 +658,42 @@
     </p>
   </footer>
 
-
-  <script>
-
-
-    const toggle = document.querySelector('.theme-toggle');
-    const body   = document.body;
-    const logo   = document.getElementById('site-logo');
-    const ghIcon = document.getElementById('github-icon');
-
-    function updateLogo() {
-      const isDark = body.dataset.theme === 'dark';
-      logo.src   = isDark ? '../ouroboros_white.png'     : '../ouroboros_black.png';
-      ghIcon.src = isDark ? '../icons/github_white.png'  : '../icons/github_black.png';
+  <!-- deferred redirect for Russian users -->
+  <script defer>
+    if (location.pathname === "/ru/" || location.pathname === "/ru/index.html") {
+      const userLang = (navigator.language||navigator.userLanguage||"").toLowerCase();
+      if (!userLang.startsWith("ru")) {
+        window.location.replace("/");
+      }
     }
+  </script>
 
-    // initialize on page load
-    updateLogo();
+  <!-- deferred theme-toggle logic -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector('.theme-toggle');
+      const body   = document.body;
+      const logo   = document.getElementById('site-logo');
+      const ghIcon = document.getElementById('github-icon');
 
-    toggle.addEventListener('click', () => {
-      body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+      function updateLogo() {
+        const isDark = body.dataset.theme === 'dark';
+        logo.src   = isDark ? '../ouroboros_white.png' : '../ouroboros_black.png';
+        ghIcon.src = isDark ? '../icons/github_white.png' : '../icons/github_black.png';
+      }
+
+      // initial dark-mode detection
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        body.dataset.theme = 'dark';
+      }
       updateLogo();
+
+      toggle.addEventListener('click', () => {
+        body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+        updateLogo();
+      });
     });
   </script>
+
 </body>
 </html>

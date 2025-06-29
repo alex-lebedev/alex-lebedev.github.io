@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- 0. Preconnect for faster font & CDN loading -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://lebedevlabs.com" crossorigin/>
+
+  <!-- 1. Core SEO -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Dr. Alexander Lebedev, MD PhD – an AI scientist and physician integrating advanced analytics in healthcare and finance."/>
   <title>Lebedev Labs — Alexander Lebedev, MD PhD</title>
+  <meta name="description" content="Dr. Alexander Lebedev, MD PhD – AI expert & physician integrating advanced analytics in digital health & finance."/>
+
+  <!-- 2. Canonical & Alternate languages -->
+  <link rel="canonical" href="https://lebedevlabs.com/"/>
+  <link rel="alternate" hreflang="en" href="https://lebedevlabs.com/"/>
+  <link rel="alternate" hreflang="ru" href="https://lebedevlabs.com/ru/"/>
+
+  <!-- 3. Favicon & Touch Icon -->
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+  <!-- 4. Open Graph -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:title"       content="Lebedev Labs — Alexander Lebedev, MD PhD"/>
+  <meta property="og:description" content="AI scientist & physician integrating advanced analytics in healthcare & finance."/>
+  <meta property="og:url"         content="https://lebedevlabs.com/"/>
+  <meta property="og:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs.jpg"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt"    content="Alexander Lebedev, MD PhD — AI expert × physician"/>
+
+  <!-- 5. Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="Lebedev Labs — Alexander Lebedev, MD PhD"/>
+  <meta name="twitter:description" content="AI scientist & physician integrating advanced analytics in healthcare & finance."/>
+  <meta name="twitter:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs.jpg"/>
+  <meta name="twitter:image:alt"   content="Alexander Lebedev, MD PhD — AI expert & physician"/>
+
+  <!-- 6. Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Alexander Lebedev",
+    "jobTitle":"MD PhD, AI Scientist & Physician",
+    "url":"https://lebedevlabs.com/",
+    "sameAs":[
+      "https://github.com/alex-lebedev",
+      "https://www.linkedin.com/in/alexandervlebedev"
+    ],
+    "image":"https://lebedevlabs.com/avatar.png",
+    "description":"AI scientist and medical doctor integrating advanced analytics in healthcare and finance."
+  }
+  </script>
+
+  <!-- 7. Styles & Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
   <style>
     /* Color tokens */
@@ -348,22 +398,6 @@
   </style>
 </head>
 <body data-theme="dark">
-  <script>
-    // Redirect Russian-speaking browsers to /ru/
-    if (location.pathname === "/") {
-      const userLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-      if (userLang.startsWith("ru")) {
-        window.location.replace("/ru/");
-      }
-    }
-  </script>
-
-  <script>
-    // Auto-detect preferred color scheme
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.setAttribute('data-theme', 'dark');
-    }
-  </script>
 
   <nav>
     <div class="nav-left">
@@ -376,10 +410,8 @@
     </div>
   </nav>
 
-
-
   <header>
-    <img src="avatar.png" alt="Alexander Lebedev" class="avatar"/>
+    <img src="avatar.png" alt="Portrait of Alexander Lebedev, MD PhD" class="avatar"/>
     <h1>Alexander Lebedev, MD PhD</h1>
     <p class="roles">
       Entrepreneur • Data Scientist • Medical Doctor
@@ -388,8 +420,8 @@
       Precision for Minds & Markets
     </p>
     <p class="brand-subtitle">
-      Lebedev Labs | AI × WellTech × Digital Health × FinTech
-      &nbsp;•&nbsp;
+      Lebedev Labs | AI × WellTech × Digital Health × FinTech |
+      &nbsp;&nbsp;
       <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">
         <img
           id="github-icon"
@@ -401,7 +433,6 @@
       </a>
     </p>
   </header>
-
 
   <section id="about">
     <h2>About</h2>
@@ -626,28 +657,40 @@
       <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">GitHub</a>
     </p>
   </footer>
-
-
-  <script>
-
-
-    const toggle = document.querySelector('.theme-toggle');
-    const body   = document.body;
-    const logo   = document.getElementById('site-logo');
-    const ghIcon = document.getElementById('github-icon');
-
-    function updateLogo() {
-      const isDark = body.dataset.theme === 'dark';
-      logo.src   = isDark ? 'ouroboros_white.png'     : 'ouroboros_black.png';
-      ghIcon.src = isDark ? 'icons/github_white.png'  : 'icons/github_black.png';
+  <!-- deferred redirect for Russian users -->
+  <script defer>
+    if (location.pathname === "/") {
+      const userLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+      if (userLang.startsWith("ru")) {
+        window.location.replace("/ru/");
+      }
     }
+  </script>
 
-    // initialize on page load
-    updateLogo();
+  <!-- deferred theme-toggle logic -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector('.theme-toggle');
+      const body   = document.body;
+      const logo   = document.getElementById('site-logo');
+      const ghIcon = document.getElementById('github-icon');
 
-    toggle.addEventListener('click', () => {
-      body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+      function updateLogo() {
+        const isDark = body.dataset.theme === 'dark';
+        logo.src   = isDark ? 'ouroboros_white.png'     : 'ouroboros_black.png';
+        ghIcon.src = isDark ? 'icons/github_white.png'  : 'icons/github_black.png';
+      }
+
+      // initial dark-mode detection
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        body.dataset.theme = 'dark';
+      }
       updateLogo();
+
+      toggle.addEventListener('click', () => {
+        body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+        updateLogo();
+      });
     });
   </script>
 </body>
