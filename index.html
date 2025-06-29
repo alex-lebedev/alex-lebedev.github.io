@@ -129,7 +129,7 @@
       flex-direction: column;
       align-items: center;
       padding: 80px 20px;
-      background: var(--bg) url('header-bg.png') center/cover no-repeat;
+      background: var(--bg);
       text-align: center;
     }
     .avatar {
@@ -657,15 +657,27 @@
       <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">GitHub</a>
     </p>
   </footer>
-  <!-- deferred redirect for Russian users -->
-  <script defer>
-    if (location.pathname === "/") {
-      const userLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-      if (userLang.startsWith("ru")) {
-        window.location.replace("/ru/");
-      }
+<!-- smart language redirect + manual override -->
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    const override = localStorage.getItem("langOverride");
+    const userLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+
+    // 1) если override не поставлен и мы на главной, и браузер на RU — кидаем на /ru/
+    if (!override && location.pathname === "/" && userLang.startsWith("ru")) {
+      window.location.replace("/ru/");
+      return;
     }
-  </script>
+
+    // 2) на любой клик по переключателю запоминаем override, чтобы автоперенаправление больше не срабатывало
+    document.querySelectorAll(".lang-switch").forEach(link => {
+      link.addEventListener("click", () => {
+        localStorage.setItem("langOverride", "true");
+      });
+    });
+  });
+</script>
+
 
   <!-- deferred theme-toggle logic -->
   <script defer>
