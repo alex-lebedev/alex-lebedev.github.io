@@ -2,14 +2,14 @@
 <html lang="ru">
 <head>
   <!-- 0. Preconnect for faster font & CDN loading -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preconnect" href="https://lebedevlabs.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://lebedevlabs.com" crossorigin>
 
   <!-- 1. Core SEO -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Александр Лебедев, MD PhD | Эксперт на стыке медицины и AI-инженерии</title>
-  <meta name="description" content="MD PhD и инженер медицинского ИИ с глубокой клинической и технической экспертизой. Проектирует безопасные и надежные AI-системы для высокозначимых задач здравоохранения."/>
+  <title>Архитектор медицинского ИИ (MD/PhD) | Александр Лебедев</title>
+  <meta name="description" content="Архитектор медицинского ИИ (MD/PhD). Проектирую и оцениваю клинические AI‑системы так, чтобы они оставались безопасными, понятными и управляемыми при реальном внедрении."/>
 
   <!-- 2. Canonical & Alternate languages -->
   <link rel="canonical" href="https://lebedevlabs.com/ru/"/>
@@ -20,25 +20,24 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
   <!-- 4. Open Graph -->
   <meta property="og:type"        content="website"/>
-  <meta property="og:title"       content="Александр Лебедев, MD PhD | Эксперт на стыке медицины и AI-инженерии"/>
-  <meta property="og:description" content="Глубокая медицинская экспертиза и глубокая AI-инженерия для высокозначимых систем здравоохранения: архитектура, оценка безопасности и надежное внедрение."/>
+  <meta property="og:title"       content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
+  <meta property="og:description" content="Архитектура, оценка, guardrails и governance для клинических AI‑систем, которые остаются понятными, безопасными и операционными при внедрении."/>
   <meta property="og:url"         content="https://lebedevlabs.com/ru/"/>
   <meta property="og:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs-ru.jpg"/>
   <meta property="og:image:width"  content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt"    content="Александр Лебедев, MD PhD — учёный-исследователь × врач"/>
+  <meta property="og:image:alt"    content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
 
   <!-- 5. Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image"/>
-  <meta name="twitter:title"       content="Александр Лебедев, MD PhD | Эксперт на стыке медицины и AI-инженерии"/>
-  <meta name="twitter:description" content="MD PhD и инженер медицинского ИИ: клиническая и техническая экспертиза в архитектуре, оценке безопасности и надежном внедрении AI в здравоохранении."/>
+  <meta name="twitter:title"       content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
+  <meta name="twitter:description" content="Архитектура, оценка, guardrails и governance для клинических AI‑систем, которые остаются понятными, безопасными и управляемыми в реальной эксплуатации."/>
   <meta name="twitter:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs-ru.jpg"/>
-  <meta name="twitter:image:alt"   content="Александр Лебедев, MD PhD — учёный-исследователь × врач"/>
+  <meta name="twitter:image:alt"   content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
 
   <!-- 6. Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -46,14 +45,22 @@
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"Александр Лебедев",
-    "jobTitle":"Инженер медицинского ИИ, MD PhD",
+    "jobTitle":"Архитектор медицинского ИИ",
     "url":"https://lebedevlabs.com/ru/",
     "sameAs":[
       "https://github.com/alex-lebedev",
       "https://www.linkedin.com/in/alexandervlebedev"
     ],
     "image":"https://lebedevlabs.com/avatar.png",
-    "description":"MD PhD и инженер медицинского ИИ с глубокой клинической и технической экспертизой в архитектуре медицинского ИИ, оценке безопасности и надежном внедрении."
+    "description":"Архитектор медицинского ИИ (MD/PhD). Проектирование и оценка клинических AI‑систем, которые остаются безопасными, понятными и управляемыми при реальном внедрении.",
+    "knowsAbout":[
+      "Архитектура медицинского ИИ",
+      "Безопасность клинических AI‑систем",
+      "Оценка и валидация",
+      "Ограничения безопасности для LLM в медицине",
+      "Управление изменениями и мониторинг",
+      "Внедрение и мониторинг"
+    ]
   }
   </script>
 
@@ -106,9 +113,28 @@
       align-items: center;
       z-index: 100;
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
     .nav-logo {
       width: 60px;
       height: auto;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      transition: color var(--transition);
+      padding: 8px 8px;
+      border-radius: 8px;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+      background: rgba(212,175,55,0.08);
     }
     .theme-toggle {
       width: 3rem;
@@ -131,7 +157,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 80px 20px;
+      padding: 90px 20px 70px;
       background: var(--bg);
       text-align: center;
     }
@@ -145,28 +171,69 @@
       margin-bottom: 20px;
     }
     header h1 {
-      font-size: 2.8rem;
-      margin: 0.2em 0;
+      font-size: 2.6rem;
+      margin: 0.25em 0 0.15em;
       font-weight: 700;
+      letter-spacing: -0.02em;
     }
     .roles {
       color: var(--muted);
-      font-size: 0.95rem;
-      margin: 0.2em 0;
-      max-width: 600px;
+      font-size: 0.98rem;
+      margin: 0.1em 0 1.0em;
+      max-width: 760px;
     }
     .hero-statement {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 500;
-      max-width: 700px;
-      margin: 0.6em 0;
-      line-height: 1.4;
+      max-width: 820px;
+      margin: 0.4em 0 0.8em;
+      line-height: 1.45;
     }
-    .brand-subtitle {
-      font-size: 0.9rem;
+    .hero-statement strong {
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(212,175,55,0.45);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+      user-select: none;
+    }
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      background: #c7a63f;
+    }
+    .btn-secondary {
+      background: rgba(212,175,55,0.08);
+      color: var(--fg);
+    }
+    .hero-footnote {
+      margin-top: 14px;
       color: var(--muted);
-      margin-top: 0.4em;
-      letter-spacing: 0.05em;
+      font-size: 0.92rem;
+      max-width: 820px;
     }
 
     /* Sections */
@@ -202,6 +269,97 @@
       color: var(--accent);
       font-size: 1.2rem;
       top: 0;
+    }
+
+    /* Editorial blocks */
+    .subhead {
+      color: var(--muted);
+      margin-top: -0.2em;
+      margin-bottom: 1.2em;
+      max-width: 820px;
+    }
+    /* Logo strip under hero */
+    .logo-strip {
+      max-width: 1000px;
+      margin: 30px auto 0;
+      padding: 0 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .logo-strip strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+    .logo-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.96;
+    }
+    .logo-row img {
+      height: 28px;
+      width: auto;
+      max-width: 150px;
+      filter: grayscale(1);
+      opacity: 0.85;
+      transition: opacity var(--transition), filter var(--transition), transform var(--transition);
+    }
+    .logo-row img.primary {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+    .logo-row img:hover {
+      filter: grayscale(0);
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+    .doctrine p {
+      max-width: 860px;
+    }
+    .doctrine ul li::before {
+      content: '—';
+      font-size: 1.0rem;
+      top: 0.05em;
+    }
+    .engagements {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .eng-item {
+      border-left: 3px solid var(--accent);
+      padding: 10px 14px;
+      background: rgba(212,175,55,0.03);
+      border-radius: 10px;
+    }
+    .eng-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+    .eng-item p {
+      margin: 0.4em 0;
+      color: var(--fg);
+    }
+    .eng-item .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 0.35em;
+    }
+    .work-list h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+    .work-list p {
+      margin: 0.35em 0 0.9em;
+      color: var(--fg);
+      max-width: 900px;
     }
 
     /* ===== Language switcher ===== */
@@ -347,6 +505,11 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+    .contact ul li::before {
+      content: '—';
+      top: 0.05em;
+      font-size: 1.0rem;
+    }
     .contact form {
       display: grid;
       gap: 16px;
@@ -415,77 +578,135 @@
 
   <header>
     <img src="../avatar.png" alt="Александр Лебедев" class="avatar"/>
-    <h1>Александр Лебедев, MD PhD</h1>
-    <p class="roles">
-      MD PhD • Инженер медицинского ИИ • Эксперт в клинической и технической областях
+    <h1>Архитектор медицинского ИИ</h1>
+    <p class="roles">MD, PhD · врач‑исследователь · архитектура + оценка + внедрение</p>
+    <p class="hero-statement">
+      Проектирую клинические AI‑системы для реального внедрения: архитектура, оценка, ограничения безопасности и контроль в эксплуатации.
     </p>
     <p class="hero-statement">
-      Глубокая экспертиза в медицине и AI-инженерии для высокозначимых систем
+      Цель — системы, которые остаются безопасными и предсказуемыми, когда данные меняются, а контекст далёк от идеального.
     </p>
-    <p class="brand-subtitle">
-      Lebedev Labs | Медицина × AI-инженерия × Клиническая безопасность |
-      &nbsp;&nbsp;
+    <div class="hero-cta" aria-label="Основные действия">
+      <a class="btn btn-primary" href="#contact">Запросить разбор</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/alexandervlebedev/" target="_blank" rel="noopener">Задать технический вопрос</a>
+    </div>
+    <p class="hero-footnote">
+      Александр Лебедев, MD PhD ·
+      <a href="https://www.linkedin.com/in/alexandervlebedev/" target="_blank" rel="noopener">LinkedIn</a>
+      ·
       <a href="https://github.com/alex-lebedev" target="_blank" rel="noopener">
         <img
           id="github-icon"
           src="../icons/github_black.png"
           alt="GitHub"
-          width="20"
+          width="18"
           style="vertical-align:middle"
         /> GitHub
       </a>
     </p>
   </header>
 
+  <div class="logo-strip" aria-label="Организации">
+    <div><strong>Организации</strong></div>
+    <div class="logo-row">
+      <!-- клиника -->
+      <img class="primary" src="../logos/function-health.webp" alt="Function Health" loading="lazy"/>
+      <img src="../logos/karolinska.png" alt="Karolinska Institutet" loading="lazy"/>
+      <img src="../logos/stavanger.png" alt="Stavanger University Hospital" loading="lazy"/>
+      <img src="../logos/arc.png" alt="Aging Research Center" loading="lazy"/>
+      <!-- wellbeing -->
+      <img src="../logos/opendialogue.png" alt="Open Dialogue Space" loading="lazy"/>
+      <img src="../logos/ohcleo.png" alt="OhCleo" loading="lazy"/>
+      <img src="../logos/dreamseer.webp" alt="Dreamseer" loading="lazy"/>
+      <img src="../logos/katharsis.png" alt="Katharsis Journeys" loading="lazy"/>
+      <!-- публичный сектор -->
+      <img src="../logos/euda.svg" alt="EUDA (ранее EMCDDA)" loading="lazy"/>
+      <img src="../logos/epa.png" alt="EPA" loading="lazy"/>
+      <img src="../logos/iiasa.jpg" alt="IIASA" loading="lazy"/>
+      <!-- финансы -->
+      <img src="../logos/alpharoc.png" alt="AlphaROC" loading="lazy"/>
+      <img src="../logos/safehaven.png" alt="Safehaven" loading="lazy"/>
+    </div>
+  </div>
 
-  <section id="about">
-    <h2>О специалисте</h2>
-    <p>Доктор Александр Лебедев, MD/PhD — инженер медицинского ИИ с глубокой экспертизой одновременно в медицине и в машинном обучении. Он проектирует AI-системы для реальных клинических контекстов, где безопасность, надежность и трассируемость критически важны.</p>
-    <p>Более 16 лет опыта в продвинутой аналитике и клинических исследованиях позволяют ему вести ключевые технические решения по архитектуре, управлению рисками и оценке качества моделей в высокозначимых медицинских сценариях.</p>
-    <p>Сотрудничает с руководителями и продуктовыми командами, снижая технические риски, повышая качество моделей и обеспечивая внедрение медицинского ИИ в соответствии с клинической ответственностью.</p>
+  <section id="signal">
+    <h2>Кратко</h2>
+    <p class="subhead">Фон, который имеет значение для серьёзной работы с клиническим ИИ.</p>
+    <ul>
+      <li><strong>Senior Medical AI Engineer (Function Health)</strong>: архитектура, практика оценки, ограничения безопасности, дисциплина внедрения</li>
+      <li><strong>MD/PhD, врач‑исследователь</strong>: клинический риск, доказательность и научная защищаемость позиции</li>
+      <li><strong>100+</strong> рецензируемых публикаций</li>
+      <li><strong>$1M+</strong> привлечено в грантах и венчурном финансировании</li>
+      <li><strong>16+</strong> лет в медицинских данных, аналитике и прикладном ML</li>
+    </ul>
   </section>
 
-<section id="highlights">
-  <h2>Профиль карьеры</h2>
-  <ul>
-    <li><strong>MD</strong> — более 20 лет клинической и частной практики в области ментального здоровья и интегративной медицины</li>
-    <li><strong>Доктор наук (PhD) по прикладному ИИ в биомедицинских данных</strong> — Бергенский университет (2014); ведущие позиции в европейских исследовательских центрах (Каролинский институт, Центр исследований старения); более 100 рецензируемых публикаций</li>
-    <li><strong>Senior Medical AI Engineer, Function Health</strong> (текущая роль) — ведёт медицинский AI R&amp;D: архитектура, защитные механизмы, системы оценки и практики надежного внедрения</li>
-    <li><strong>Сооснователь Dreamseer</strong> (2023–н.в.) — запуск приложения для анализа сновидений на основе ИИ; проект поддержан Google Founders Fund</li>
-    <li><strong>Сооснователь Katharsis Journeys Ltd</strong> (2022–2023) — проект признан одним из лучших псилоцибиновых ретритов в Европе (по версии Healing Maps)</li>
-    <li><strong>Победитель Kaggle MLSP Schizophrenia Challenge</strong> (2014) — точность классификации 92%</li>
-    <li><strong>Привлечено более $1 млн</strong> в виде исследовательных грантов и венчурного финансирования (Helse Vest, MedIm, Google Founders Fund)</li>
-    <li><strong>Операционная эффективность</strong> — оптимизация аналитических процессов в здравоохранении и digital-продуктах, обеспечившая рост эффективности команд более чем на 30%</li>
-    <li><strong>Отраслевая кооперация</strong> — сотрудничество с EMCDDA, EPA и IIASA по вопросам наркополитики, психического здоровья и социально-экономических исследований</li>
-  </ul>
-</section>
+  <section id="doctrine" class="doctrine">
+    <h2>Почему клинический ИИ ломается</h2>
+    <p>Клинический ИИ ломается там, где качество модели принимают за клиническую состоятельность.</p>
+    <p>
+      Большая часть ущерба проявляется <strong>после</strong> релиза: смещаются процессы и данные, качество «съедается»,
+      а систему становится трудно <strong>проследить</strong>, <strong>отладить</strong> и <strong>эксплуатационно контролировать</strong>.
+    </p>
+    <ul>
+      <li><strong>Клиническая задача «уезжает»</strong> — протоколы, кодирование, критерии включения и пользовательские сценарии расходятся с тем, что вы валидировали; целевое состояние меняется и со стороны клиники, и со стороны продукта.</li>
+      <li><strong>Тихая деградация в продакшене</strong> — меняются входы и популяции; без мониторинга, привязанного к вреду, качество падает раньше, чем это замечают.</li>
+      <li><strong>Нет аудит‑следа — нет реакции на инциденты</strong> — нельзя восстановить происхождение данных, версию модели, промпты и инструменты, конфигурацию; отказы нельзя ни объяснить, ни устранить предсказуемо.</li>
+      <li><strong>Интеграция — там умирает архитектура</strong> — задержки, пропуски полей, изменения на стороне источников и поведение человека в контуре ломают допущения, заложенные в обучение и оценку.</li>
+      <li><strong>Governance на бумаге вместо эксплуатационного</strong> — политики есть, но нет регламентов реагирования, контроля изменений, триггеров дрейфа и ясной ответственности, когда что‑то ломается.</li>
+      <li><strong>Оценка оптимизирует не то</strong> — метрики соревнований или узкие тесты, которые не совпадают с решением, краевыми случаями и режимами отказа, которые продукт видит на практике.</li>
+    </ul>
+    <p>
+      Если вы не можете объяснить, что системе разрешено делать, откуда вы знаете, что она достаточно безопасна,
+      и что происходит, когда она ошибается, — у вас нет клинической системы. У вас есть демо.
+    </p>
+  </section>
 
-  <section id="expertise">
-    <h2>Основные компетенции</h2>
-    <div class="grid auto-fit-280">
-      <div class="expertise-item">
-        <h3>Архитектура медицинского ИИ</h3>
-        <p>Проектирование production-grade AI/ML-архитектур для healthtech-продуктов: от данных и моделей до надежных inference-контуров.</p>
+  <section id="help">
+    <h2>С чем я помогаю</h2>
+    <ul>
+      <li><strong>Архитектура системы</strong> для клинических процессов: интерфейсы, трассируемость, локализация отказов</li>
+      <li><strong>Границы безопасности</strong>: запреты, эскалации, аудируемая логика</li>
+      <li><strong>Оценка</strong>: определение задачи, референс‑стандарты, тесты по режимам отказа, сдвиги и подгруппы, пороги приемки</li>
+      <li><strong>Безопасность LLM в медицине</strong>: границы инструментов и поиска, политика отказов, покрытие “красной командой”, непрерывные проверки</li>
+      <li><strong>Управление, которое работает</strong>: контроль изменений, мониторинг, инциденты, пост‑релизные ревью</li>
+      <li><strong>Решения руководства</strong>: что выпускать, что остановить, что должно быть истинно перед масштабированием</li>
+      <li><strong>Техническая экспертиза для сделок и советов директоров</strong>: что реально, что хрупко, чего не хватает</li>
+    </ul>
+  </section>
+
+  <section id="method">
+    <h2>Как я работаю</h2>
+    <p>Начинаю с клинической задачи и поверхности вреда. Затем проектирую контуры контроля, которые команда сможет реально вести.</p>
+    <p><strong>Типичная последовательность:</strong></p>
+    <ul>
+      <li><strong>Use case и claims</strong>: кто пользуется, какое решение принимает, в каких ограничениях</li>
+      <li><strong>Карта рисков</strong>: таксономия вреда, misuse, крайние случаи, «never events»</li>
+      <li><strong>Архитектура</strong>: происхождение данных, границы модели, инструменты, аудит‑следы, надежность</li>
+      <li><strong>Оценка</strong>: референс‑стандарты, наборы тестов, инвентарь отказов, критерии go/no‑go</li>
+      <li><strong>Операции</strong>: сигналы мониторинга, реакция на дрейф, инциденты, управление изменениями</li>
+    </ul>
+  </section>
+
+  <section id="engagements">
+    <h2>Типичные запросы</h2>
+    <p class="subhead">Примеры того, с чем приходят команды — с чёткой формулировкой, письменным итогом и привязкой к решению.</p>
+    <div class="engagements">
+      <div class="eng-item">
+        <h3>Достаточно ли наша оценка, чтобы выходить в запуск?</h3>
+        <p>Утверждения о продукте, наборы данных, режимы отказа и пробелы, которые вы ещё не проверили — до того как вы отвечаете перед клиницистами, заказчиками или регуляторами.</p>
       </div>
-      <div class="expertise-item">
-        <h3>Защитные механизмы LLM в медицине</h3>
-        <p>Проектирование и внедрение защитных механизмов, снижающих риск небезопасных ответов и повышающих надежность поведения модели в клиническом контексте.</p>
+      <div class="eng-item">
+        <h3>Выдержит ли эта архитектура реальных клиентов, интеграций и эксплуатацию?</h3>
+        <p>Потоки данных, версионирование, надёжность, точки мониторинга и ясная ответственность при изменении конвейеров и продукта — за пределами пилота и демо.</p>
       </div>
-      <div class="expertise-item">
-        <h3>Клиническая оценка и оценка безопасности</h3>
-        <p>Разработка систем оценки качества и безопасности, включая анализ типовых отказов модели для обоснованных решений о запуске.</p>
+      <div class="eng-item">
+        <h3>Мы встраиваем LLM в продукт для здоровья — что сломается первым?</h3>
+        <p>Границы, использование инструментов, эскалация, сценарии «красной команды» и непрерывные проверки — а не игра с промптами.</p>
       </div>
-      <div class="expertise-item">
-        <h3>Управление жизненным циклом ИИ и мониторинг</h3>
-        <p>Построение процессов контроля после запуска: качество, дрейф, риски и устойчивость моделей в рабочей эксплуатации.</p>
-      </div>
-      <div class="expertise-item">
-        <h3>Клинически надежные конвейеры данных и моделей</h3>
-        <p>Построение конвейеров с воспроизводимостью, трассируемостью и операционными контролями, необходимыми для медицинских задач.</p>
-      </div>
-      <div class="expertise-item">
-        <h3>Техническая экспертиза AI-продуктов</h3>
-        <p>Оценка готовности AI-продукта для руководителей и инвесторов: риски, качество реализации и реалистичность внедрения.</p>
+      <div class="eng-item">
+        <h3>Мы инвестируем — что здесь реально?</h3>
+        <p>Доказательная база против демо, реализм внедрения и краткий список рисков, которые могут убить инвестиционный тезис — для совета, фонда и руководства.</p>
       </div>
     </div>
   </section>
@@ -498,53 +719,8 @@
         <img class="work-logo" src="../logos/function-health.webp" alt="Function Health" loading="lazy"/>
         <h4>Function Health</h4>
         <p>
-          Senior Medical AI Engineer, ведущий медицинский AI R&amp;D в направлениях архитектуры, защитных механизмов и дизайна оценки. Фокус на безопасных AI-системах и надежных практиках внедрения в превентивной медицине.
-        </p>
-      </div>
-
-      <div class="work-card">
-        <img class="work-logo" src="../logos/alpharoc.png" alt="AlphaROC" loading="lazy"/>
-        <h4>AlphaROC</h4>
-        <p>
-          Разработал метод сезонного анализа финансовых транзакций; создал ML-модели прогнозирования цен и оценки фьючерсов и акций; автоматизировал сбор и анализ альтернативных данных и финансовой отчетности.
-        </p>
-      </div>
-
-      <div class="work-card">
-        <img class="work-logo" src="../logos/opendialogue.png" alt="Open Dialogue Space" loading="lazy"/>
-        <h4>Open Dialogue Space</h4>
-        <p>
-          Директор по науке. Руководит научно-исследовательскими работами цифровой платформы для психического здоровья; внедрил интерактивные дашборды для мониторинга состояния психического здоровья и семантические конвейеры для выявления кризисных состояний.
-        </p>
-      </div>
-
-      <div class="work-card">
-        <img class="work-logo" src="../logos/dreamseer.png" alt="Dreamseer" loading="lazy"/>
-        <h4>Dreamseer</h4>
-        <p>Сооснователь. Применил передовые методы NLP и ИИ для создания инновационной платформы анализа сновидений, расширив возможности цифровых решений в области психического здоровья.</p>
-      </div>
-
-      <div class="work-card">
-        <img class="work-logo" src="../logos/safehaven.png" alt="Safehaven Hedge Fund" loading="lazy"/>
-        <h4>Safehaven Hedge Fund</h4>
-        <p>
-         Занимался ончейн-аналитикой и макроэкономическим анализом рынков; разрабатывал алгоритмические стратегии торговли и хеджирования; поддерживал коммуникацию с клиентами.
-        </p>
-      </div>
-
-      <div class="work-card">
-        <img class="work-logo" src="../logos/ohcleo.png" alt="OhCleo" loading="lazy"/>
-        <h4>OhCleo</h4>
-        <p>
-          Разрабатывал продвинутые чат-боты на базе больших языковых моделей, систему тематического тегирования контента и конвейеры преобразования речи в текст для повышения вовлеченности пользователей и персонализации платформы.
-        </p>
-      </div>
-
-      <div class="work-card">
-        <img class="work-logo" src="../logos/katharsis.png" alt="Katharsis Journeys Ltd" loading="lazy"/>
-        <h4>Katharsis Journeys Ltd</h4>
-        <p>
-          Сооснователь. Организовал стратегические партнерства с академическими учреждениями; внедрил NLP-решения, обеспечившие рост выручки на 40%. Проект Katharsis Journeys признан одним из лучших псилоцибиновых ретритов в Европе (Healing Maps).
+          Senior Medical AI Engineer. Архитектура и практика оценки клинического ИИ: границы безопасности, покрытие режимов отказа,
+          дисциплина внедрения в реальных медицинских процессах.
         </p>
       </div>
 
@@ -552,7 +728,8 @@
         <img class="work-logo" src="../logos/karolinska.png" alt="Karolinska Institutet" loading="lazy"/>
         <h4>Karolinska Institutet</h4>
         <p>
-          Аналитика больших данных для информирования политики в сфере потребления психоактивных веществ и анализа глобальных социально-экономических трендов. Координировал масштабные инициативы по улучшению психического здоровья и клинические исследования новых методов терапии депрессии.
+          Исследования и клиническая работа “под ограничениями”: трассируемость, защищаемая аналитика и дисциплина исполнения —
+          то, что напрямую переносится на доказательность и контроль клинического ИИ.
         </p>
       </div>
 
@@ -560,48 +737,103 @@
         <img class="work-logo" src="../logos/stavanger.png" alt="Stavanger University Hospital" loading="lazy"/>
         <h4>Stavanger University Hospital</h4>
         <p>
-          Разработал ML-инструменты для анализа клинических данных; привлек финансирование в размере 1,5 млн NOK; наладил международное научное сотрудничество.
+          Прикладной ML на клинических данных внутри институциональных ограничений. Привлечено 1,5 млн NOK финансирования; построены устойчивые коллаборации.
         </p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="../logos/opendialogue.png" alt="Open Dialogue Space" loading="lazy"/>
+        <h4>Open Dialogue Space</h4>
+        <p>
+          Директор по науке. Операционная аналитика для mental health: мониторинг, семантические конвейеры и дашборды,
+          ориентированные на реальные решения, а не на красивую демонстрацию.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="../logos/dreamseer.webp" alt="Dreamseer" loading="lazy"/>
+        <h4>Dreamseer</h4>
+        <p>Сооснователь. AI‑продукт в wellbeing: ответственность за границы поведения системы, качество и практическую доставку.</p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="../logos/ohcleo.png" alt="OhCleo" loading="lazy"/>
+        <h4>OhCleo</h4>
+        <p>LLM‑процессы для пользовательских продуктов: надежность, безопасное использование инструментов и дизайн поведения за пределами “prompt‑демо”.</p>
+      </div>
+
+      <div class="work-card">
+        <img class="work-logo" src="../logos/katharsis.png" alt="Katharsis Journeys Ltd" loading="lazy"/>
+        <h4>Katharsis Journeys Ltd</h4>
+        <p>Сооснователь. Wellbeing‑бизнес с повышенной ответственностью: партнёрства с академией, операционная аналитика и автоматизация.</p>
       </div>
 
       <div class="work-card">
         <img class="work-logo" src="../logos/arc.png" alt="Aging Research Center" loading="lazy"/>
         <h4>Aging Research Center</h4>
+        <p>Координация проекта ERC на €1M и полный цикл клинического исследования: протокол, анализ, итоговая отчётность.</p>
+      </div>
+
+      <div class="work-card">
+        <div style="display:flex; gap:10px; align-items:center; margin-bottom:10px; flex-wrap:wrap">
+          <img class="work-logo" src="../logos/euda.svg" alt="EUDA (ранее EMCDDA)" loading="lazy" style="width:auto; height:34px"/>
+          <img class="work-logo" src="../logos/epa.png" alt="EPA" loading="lazy" style="width:auto; height:34px"/>
+          <img class="work-logo" src="../logos/iiasa.jpg" alt="IIASA" loading="lazy" style="width:auto; height:34px"/>
+        </div>
+        <h4>Публичный сектор: доказательность и аналитика</h4>
         <p>
-          Координировал проект Европейского исследовательского совета (ERC) с бюджетом €1 млн по изучению когнитивной и нейробиологической пластичности. Курировал полный цикл клинического исследования — от разработки протокола до анализа данных и подготовки итогового отчета.
+          Работа с <strong>EUDA (ранее EMCDDA)</strong>, <strong>EPA</strong> и <strong>IIASA</strong> в условиях публичной ответственности:
+          трассируемость, защищаемые методы, решения при неопределенности.
         </p>
+      </div>
+
+      <div class="work-card">
+        <div style="display:flex; gap:10px; align-items:center; margin-bottom:10px; flex-wrap:wrap">
+          <img class="work-logo" src="../logos/alpharoc.png" alt="AlphaROC" loading="lazy" style="width:auto; height:34px"/>
+          <img class="work-logo" src="../logos/safehaven.png" alt="Safehaven" loading="lazy" style="width:auto; height:34px"/>
+        </div>
+        <h4>Рынки и ончейн (методы)</h4>
+        <p>Прикладная аналитика и ML в шумных, меняющихся средах: извлечение сигнала, мониторинг, решения при сдвиге распределений.</p>
       </div>
 
     </div>
   </section>
 
   <section id="analytics-showcase">
-    <h2>Аналитика данных и визуализация</h2>
+    <h2>Визуализация и аналитика</h2>
     <div class="grid auto-fit-280">
-      <!-- On-Chain BTC Analysis -->
       <figure class="visualization">
         <img
-          src="../images/market-MLanalysis.png"
-          alt="Ончейн-аналитика BTC – цена и объём незатраченных вознаграждений майнеров."
+          src="../images/medical-dashboard.png"
+          alt="Медицинский дашборд — мониторинг и поддержка решений"
           loading="lazy"
         />
         <figcaption>
-          <strong>Ончейн-аналитика BTC</strong><br/>
-          Сопоставление цены BTC с ежедневным изменением объёма незатраченных вознаграждений майнеров.
+          <strong>Медицинский дашборд</strong><br/>
+          Мониторинг и поддержка решений для реальных клинических процессов.
         </figcaption>
       </figure>
-      <!-- Brain imaging ML Pipeline -->
       <figure class="visualization">
         <img
           src="../images/brain-MLanalysis.png"
-          alt="Workflow pipeline from Lebedev et al. (2014) – FreeSurfer &amp; R analysis"
+          alt="Pipeline из Lebedev et al. (2014) — FreeSurfer и анализ в R"
           loading="lazy"
         />
         <figcaption>
-          <strong>Диагностическая классификация медицинских данных</strong><br/>
-          Из <a href="https://pubmed.ncbi.nlm.nih.gov/25379423/" target="_blank" rel="noopener">
-            Lebedev et al. (2014)
-          </a>: обработка медицинских изображений → выделение высокоразмерных признаков → ML-классификация с последующей визуализацией.
+          <strong>Классификация медицинских данных</strong><br/>
+          Из <a href="https://pubmed.ncbi.nlm.nih.gov/25379423/" target="_blank" rel="noopener">Lebedev et al. (2014)</a>:
+          обработка изображений → признаки → ML‑классификация → визуализация.
+        </figcaption>
+      </figure>
+      <figure class="visualization">
+        <img
+          src="../images/market-MLanalysis.png"
+          alt="Аналитика рынков и ончейна — извлечение сигнала при сдвиге"
+          loading="lazy"
+        />
+        <figcaption>
+          <strong>Извлечение сигнала при сдвиге</strong><br/>
+          Мониторинг и аналитика в шумных, меняющихся средах.
         </figcaption>
       </figure>
     </div>
@@ -612,13 +844,8 @@
     <div class="reviews">
 
       <div class="review">
-        <p>Александр — один из самых вдохновляющих и выдающихся специалистов, которых мне доводилось встречать. Его эмпатия и инновационный подход меняют жизни.</p>
-        <strong>— Jonathan Dekle</strong>
-      </div>
-
-      <div class="review">
-        <p>Блестящий врач, учёный и лидер. Такие способности слушать, анализировать и наставлять с глубоким пониманием рабочих процессов встречаются редко.</p>
-        <strong>— Tatiana Santini</strong>
+        <p>Его экспертность в аналитике больших данных и статистических методах была ключевой в ряде значимых проектов.</p>
+        <strong>— Christoph Abé, PhD</strong>
       </div>
 
       <div class="review">
@@ -627,39 +854,38 @@
       </div>
 
       <div class="review">
-        <p>Его экспертность в аналитике больших данных и статистических методах была ключевой в ряде значимых проектов.</p>
-        <strong>— Christoph Abé, PhD</strong>
-      </div>
-
-      <div class="review">
         <p>Он сочетает техническую точность, креативность и оперативность — для него нет ничего невозможного.</p>
         <strong>— Ivan Dimoski</strong>
-      </div>
-
-      <div class="review">
-        <p>Превосходный исследователь и разработчик, обладающий тёплым характером, эмпатией и исключительной продуктивностью.</p>
-        <strong>— Pierre de Boer</strong>
       </div>
 
     </div>
   </section>
 
-  <section id="vision">
-    <h2>Миссия и видение</h2>
+  <section id="about">
+    <h2>Обо мне</h2>
     <p>
-      Моя миссия — превращать строгую клиническую логику и сильную инженерную практику
-      в системы медицинского ИИ, которые надежны, измеримы и безопасны в реальной эксплуатации.
+      MD/PhD, врач‑исследователь и инженер медицинского ИИ. Проектирую клинические AI‑системы там, где важнее всего оценка,
+      ограничения безопасности и дисциплина изменений — а не бенчмарки.
     </p>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Контакты</h2>
-    <p>Для архитектуры медицинского ИИ, оценки безопасности или принятия высокозначимых продуктовых решений опишите задачу ниже.</p>
+    <h2>Контакт</h2>
+    <p>Если вы разрабатываете или внедряете клинический ИИ — или готовите инвестиционное решение — и нужна архитектурная экспертиза, оценка или работа с безопасностью, напишите коротко по делу.</p>
+    <p><strong>Укажите:</strong></p>
+    <ul>
+      <li>продукт + клинический процесс</li>
+      <li>стадию (прототип / пилот / продакшен)</li>
+      <li>какое решение нужно принять</li>
+      <li>где концентрируется риск (для пациента, для клинициста, регулируемые заявления о продукте)</li>
+      <li>сроки и участники</li>
+    </ul>
+    <p>Подойдут материалы по оценке и безопасности (отчёты валидации, карты моделей, заметки по инцидентам). Если задача в моей зоне — предложу минимальный формат, который закрывает решение.</p>
     <form action="https://formspree.io/f/mblypeyl" method="POST">
       <input type="text" name="name" placeholder="Имя" required/>
       <input type="email" name="email" placeholder="Email" required/>
       <textarea name="message" rows="5" placeholder="Сообщение" required></textarea>
-      <button type="submit">Связаться</button>
+      <button type="submit">Запросить разбор</button>
     </form>
   </section>
 
