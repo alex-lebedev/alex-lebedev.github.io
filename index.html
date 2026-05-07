@@ -9,10 +9,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Medical AI Architect (MD/PhD) | Alexander Lebedev</title>
-  <meta name="description" content="Medical AI Architect (MD/PhD). I build and evaluate clinical AI systems that remain safe, legible, and governable in real-world deployment."/>
+  <meta name="description" content="MD/PhD medical AI architect: clinical AI architecture, evaluation, safety controls, and deployment discipline—for systems that stay defensible with real customers, integrations, and production operations."/>
+  <meta name="theme-color" content="#0d0d0d"/>
 
   <!-- 2. Canonical & Alternate languages -->
   <link rel="canonical" href="https://lebedevlabs.com/"/>
+  <link rel="alternate" hreflang="x-default" href="https://lebedevlabs.com/"/>
   <link rel="alternate" hreflang="en" href="https://lebedevlabs.com/"/>
   <link rel="alternate" hreflang="ru" href="https://lebedevlabs.com/ru/"/>
 
@@ -24,8 +26,10 @@
   <!-- 4. Open Graph -->
   <meta property="og:type"        content="website"/>
   <meta property="og:title"       content="Medical AI Architect (MD/PhD) — Alexander Lebedev"/>
-  <meta property="og:description" content="Clinical AI architecture, evaluation, and safety practices for systems that remain operable in real-world deployment."/>
+  <meta property="og:description" content="Architecture, evaluation, safety controls, and deployment discipline for clinical AI that must hold up beyond demos—with real customers, integrations, and production operations."/>
   <meta property="og:url"         content="https://lebedevlabs.com/"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:locale:alternate" content="ru_RU"/>
   <meta property="og:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs.jpg"/>
   <meta property="og:image:width"  content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -34,31 +38,58 @@
   <!-- 5. Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image"/>
   <meta name="twitter:title"       content="Medical AI Architect (MD/PhD) — Alexander Lebedev"/>
-  <meta name="twitter:description" content="Clinical AI architecture, evaluation, and safety practices for systems that remain operable in real-world deployment."/>
+  <meta name="twitter:description" content="Architecture, evaluation, safety controls, and deployment discipline for clinical AI—in production, not just the lab."/>
   <meta name="twitter:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs.jpg"/>
   <meta name="twitter:image:alt"   content="Medical AI Architect (MD/PhD) — Alexander Lebedev"/>
 
   <!-- 6. Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Alexander Lebedev",
-    "jobTitle":"Medical AI Architect",
-    "url":"https://lebedevlabs.com/",
-    "sameAs":[
-      "https://github.com/alex-lebedev",
-      "https://www.linkedin.com/in/alexandervlebedev"
-    ],
-    "image":"https://lebedevlabs.com/avatar.png",
-    "description":"Medical AI Architect (MD/PhD). Clinical AI architecture, evaluation, and safety practices for systems that remain operable in real-world deployment.",
-    "knowsAbout":[
-      "Clinical AI safety",
-      "Medical AI architecture",
-      "Evaluation and validation",
-      "Deployment and monitoring",
-      "Governance and change control",
-      "LLMs in healthcare"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lebedevlabs.com/#website",
+        "url": "https://lebedevlabs.com/",
+        "name": "Lebedev Labs",
+        "description": "Medical AI architecture, evaluation, safety, and deployment discipline for clinical systems.",
+        "publisher": { "@id": "https://lebedevlabs.com/#person" },
+        "inLanguage": ["en", "ru"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lebedevlabs.com/#webpage",
+        "url": "https://lebedevlabs.com/",
+        "name": "Medical AI Architect (MD/PhD) | Alexander Lebedev",
+        "description": "MD/PhD medical AI architect: clinical AI architecture, evaluation, safety controls, and deployment discipline—for systems that stay defensible with real customers, integrations, and production operations.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://lebedevlabs.com/#website" },
+        "about": { "@id": "https://lebedevlabs.com/#person" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://lebedevlabs.com/avatar.png" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lebedevlabs.com/#person",
+        "name": "Alexander Lebedev",
+        "alternateName": "Александр Лебедев",
+        "jobTitle": "Medical AI Architect",
+        "url": "https://lebedevlabs.com/",
+        "sameAs": [
+          "https://github.com/alex-lebedev",
+          "https://www.linkedin.com/in/alexandervlebedev"
+        ],
+        "image": "https://lebedevlabs.com/avatar.png",
+        "description": "MD/PhD physician-scientist and medical AI architect focused on clinical AI architecture, evaluation, safety controls, and deployment discipline.",
+        "knowsLanguage": ["en", "ru"],
+        "knowsAbout": [
+          "Clinical AI safety",
+          "Medical AI architecture",
+          "Clinical AI evaluation and validation",
+          "LLM safety in healthcare",
+          "Production monitoring and drift",
+          "Clinical AI governance and change control"
+        ]
+      }
     ]
   }
   </script>

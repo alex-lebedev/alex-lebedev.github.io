@@ -9,12 +9,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Архитектор медицинского ИИ (MD/PhD) | Александр Лебедев</title>
-  <meta name="description" content="Архитектор медицинского ИИ (MD/PhD). Проектирую и оцениваю клинические AI‑системы так, чтобы они оставались безопасными, понятными и управляемыми при реальном внедрении."/>
+  <meta name="description" content="Архитектор медицинского ИИ (MD/PhD): архитектура, оценка, контроль безопасности и дисциплина внедрения — чтобы клинический ИИ оставался защищаемым при реальных заказчиках, интеграциях и эксплуатации."/>
+  <meta name="theme-color" content="#0d0d0d"/>
 
   <!-- 2. Canonical & Alternate languages -->
   <link rel="canonical" href="https://lebedevlabs.com/ru/"/>
-  <link rel="alternate" hreflang="ru" href="https://lebedevlabs.com/ru/"/>
+  <link rel="alternate" hreflang="x-default" href="https://lebedevlabs.com/"/>
   <link rel="alternate" hreflang="en" href="https://lebedevlabs.com/"/>
+  <link rel="alternate" hreflang="ru" href="https://lebedevlabs.com/ru/"/>
 
   <!-- 3. Favicon & Touch Icons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -25,8 +27,10 @@
   <!-- 4. Open Graph -->
   <meta property="og:type"        content="website"/>
   <meta property="og:title"       content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
-  <meta property="og:description" content="Архитектура, оценка, guardrails и governance для клинических AI‑систем, которые остаются понятными, безопасными и операционными при внедрении."/>
+  <meta property="og:description" content="Архитектура, оценка, контроль безопасности и управляемое внедрение клинических AI‑систем — не для демо, а для реальных заказчиков, интеграций и продакшена."/>
   <meta property="og:url"         content="https://lebedevlabs.com/ru/"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:locale:alternate" content="en_US"/>
   <meta property="og:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs-ru.jpg"/>
   <meta property="og:image:width"  content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -35,31 +39,58 @@
   <!-- 5. Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image"/>
   <meta name="twitter:title"       content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
-  <meta name="twitter:description" content="Архитектура, оценка, guardrails и governance для клинических AI‑систем, которые остаются понятными, безопасными и управляемыми в реальной эксплуатации."/>
+  <meta name="twitter:description" content="Архитектура, оценка, безопасность и дисциплина внедрения клинического ИИ — в эксплуатации, а не только в лаборатории."/>
   <meta name="twitter:image"       content="https://lebedevlabs.com/images/og-image-lebedev-labs-ru.jpg"/>
   <meta name="twitter:image:alt"   content="Архитектор медицинского ИИ — Александр Лебедев, MD PhD"/>
 
   <!-- 6. Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Александр Лебедев",
-    "jobTitle":"Архитектор медицинского ИИ",
-    "url":"https://lebedevlabs.com/ru/",
-    "sameAs":[
-      "https://github.com/alex-lebedev",
-      "https://www.linkedin.com/in/alexandervlebedev"
-    ],
-    "image":"https://lebedevlabs.com/avatar.png",
-    "description":"Архитектор медицинского ИИ (MD/PhD). Проектирование и оценка клинических AI‑систем, которые остаются безопасными, понятными и управляемыми при реальном внедрении.",
-    "knowsAbout":[
-      "Архитектура медицинского ИИ",
-      "Безопасность клинических AI‑систем",
-      "Оценка и валидация",
-      "Ограничения безопасности для LLM в медицине",
-      "Управление изменениями и мониторинг",
-      "Внедрение и мониторинг"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lebedevlabs.com/#website",
+        "url": "https://lebedevlabs.com/",
+        "name": "Lebedev Labs",
+        "description": "Medical AI architecture, evaluation, safety, and deployment discipline for clinical systems.",
+        "publisher": { "@id": "https://lebedevlabs.com/#person" },
+        "inLanguage": ["en", "ru"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lebedevlabs.com/ru/#webpage",
+        "url": "https://lebedevlabs.com/ru/",
+        "name": "Архитектор медицинского ИИ (MD/PhD) | Александр Лебедев",
+        "description": "Архитектор медицинского ИИ (MD/PhD): архитектура, оценка, контроль безопасности и дисциплина внедрения — чтобы клинический ИИ оставался защищаемым при реальных заказчиках, интеграциях и эксплуатации.",
+        "inLanguage": "ru",
+        "isPartOf": { "@id": "https://lebedevlabs.com/#website" },
+        "about": { "@id": "https://lebedevlabs.com/#person" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://lebedevlabs.com/avatar.png" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lebedevlabs.com/#person",
+        "name": "Alexander Lebedev",
+        "alternateName": "Александр Лебедев",
+        "jobTitle": "Архитектор медицинского ИИ",
+        "url": "https://lebedevlabs.com/",
+        "sameAs": [
+          "https://github.com/alex-lebedev",
+          "https://www.linkedin.com/in/alexandervlebedev"
+        ],
+        "image": "https://lebedevlabs.com/avatar.png",
+        "description": "MD/PhD, врач‑исследователь и архитектор медицинского ИИ: проектирование и оценка клинических AI‑систем с упором на безопасность, управляемость и реальную эксплуатацию.",
+        "knowsLanguage": ["en", "ru"],
+        "knowsAbout": [
+          "Архитектура медицинского ИИ",
+          "Безопасность клинических AI‑систем",
+          "Оценка и валидация клинического ИИ",
+          "Безопасность LLM в медицине",
+          "Мониторинг и дрейф в продакшене",
+          "Управление изменениями и эксплуатационный контроль"
+        ]
+      }
     ]
   }
   </script>
@@ -631,7 +662,7 @@
 
   <section id="signal">
     <h2>Кратко</h2>
-    <p class="subhead">Фон, который имеет значение для серьёзной работы с клиническим ИИ.</p>
+    <p class="subhead">Бэкграунд, важный для понимания того, с чем я работаю.</p>
     <ul>
       <li><strong>Senior Medical AI Engineer (Function Health)</strong>: архитектура, практика оценки, ограничения безопасности, дисциплина внедрения</li>
       <li><strong>MD/PhD, врач‑исследователь</strong>: клинический риск, доказательность и научная защищаемость позиции</li>
@@ -649,7 +680,7 @@
       а систему становится трудно <strong>проследить</strong>, <strong>отладить</strong> и <strong>эксплуатационно контролировать</strong>.
     </p>
     <ul>
-      <li><strong>Клиническая задача «уезжает»</strong> — протоколы, кодирование, критерии включения и пользовательские сценарии расходятся с тем, что вы валидировали; целевое состояние меняется и со стороны клиники, и со стороны продукта.</li>
+      <li><strong>Клиническая задача дрейфует</strong> — протоколы, кодирование, критерии включения и пользовательские сценарии расходятся с тем, что вы валидировали; целевое состояние меняется и со стороны клиники, и со стороны продукта.</li>
       <li><strong>Тихая деградация в продакшене</strong> — меняются входы и популяции; без мониторинга, привязанного к вреду, качество падает раньше, чем это замечают.</li>
       <li><strong>Нет аудит‑следа — нет реакции на инциденты</strong> — нельзя восстановить происхождение данных, версию модели, промпты и инструменты, конфигурацию; отказы нельзя ни объяснить, ни устранить предсказуемо.</li>
       <li><strong>Интеграция — там умирает архитектура</strong> — задержки, пропуски полей, изменения на стороне источников и поведение человека в контуре ломают допущения, заложенные в обучение и оценку.</li>
@@ -677,7 +708,7 @@
 
   <section id="method">
     <h2>Как я работаю</h2>
-    <p>Начинаю с клинической задачи и поверхности вреда. Затем проектирую контуры контроля, которые команда сможет реально вести.</p>
+    <p>Начинаю с клинической задачи и того, где возможен вред и для кого. Затем проектирую контуры контроля, которые команда сможет реально вести.</p>
     <p><strong>Типичная последовательность:</strong></p>
     <ul>
       <li><strong>Use case и claims</strong>: кто пользуется, какое решение принимает, в каких ограничениях</li>
